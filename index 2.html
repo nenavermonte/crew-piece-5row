@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crew Piece Rate Submission (Google Sheet)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    input, textarea { width: 100%; padding: 8px; margin-top: 4px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 4px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+    th, td { padding: 8px; border: 1px solid #ddd; text-align: left; }
+    h2 { margin-top: 40px; }
+    button { background-color: #2196F3; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background-color: #0b7dda; }
+  </style>
+</head>
+<body>
+  <h1>Crew Manager Piece Rate Submission</h1>
+
+  <form method="POST" action="https://script.google.com/macros/s/AKfycbzwYE8JiaiJmbkOqtFyngaD1HFNm1jeOBxyYdABP2MM0RhgRe57lvHNtgKadkMuDEFJrA/exec">
+    <label for="manager">Crew Manager:</label>
+    <input type="text" id="manager" name="Crew_Manager" required />
+
+    <label for="job">Job #:</label>
+    <input type="text" id="job" name="Job_Number" required />
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="Date" required />
+
+    <label for="total">Total Piece Rate:</label>
+    <input type="number" id="total" name="Total_Piece_Rate" step="0.01" required />
+
+    <h2>Crew Members</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Crew Member</th>
+          <th>Piece Rate Requested</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="Crew_Member_1" /></td>
+          <td><input type="number" name="Piece_Rate_Requested_1" step="0.01" /></td>
+          <td><input type="text" name="Notes_1" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="Crew_Member_2" /></td>
+          <td><input type="number" name="Piece_Rate_Requested_2" step="0.01" /></td>
+          <td><input type="text" name="Notes_2" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="Crew_Member_3" /></td>
+          <td><input type="number" name="Piece_Rate_Requested_3" step="0.01" /></td>
+          <td><input type="text" name="Notes_3" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="Crew_Member_4" /></td>
+          <td><input type="number" name="Piece_Rate_Requested_4" step="0.01" /></td>
+          <td><input type="text" name="Notes_4" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="Crew_Member_5" /></td>
+          <td><input type="number" name="Piece_Rate_Requested_5" step="0.01" /></td>
+          <td><input type="text" name="Notes_5" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <label for="remaining">Remaining Piece Rate:</label>
+    <input type="number" id="remaining" name="Remaining_Piece_Rate" step="0.01" />
+
+    <button type="submit">Submit to Google Sheet</button>
+  </form>
+</body>
+</html>
